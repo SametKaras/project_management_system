@@ -25,6 +25,7 @@ export const useLogout = () => {
       toast.success("Çıkış yapıldı");
       router.refresh();
       queryClient.invalidateQueries({ queryKey: ["current"] });
+      queryClient.invalidateQueries({ queryKey: ["workspaces"] });
     },
     onError: () => {
       toast.error("Çıkış yapma başarısız!");
