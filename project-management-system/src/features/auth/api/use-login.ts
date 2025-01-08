@@ -1,3 +1,5 @@
+import { toast } from "sonner";
+
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferRequestType, InferResponseType } from "hono";
 
@@ -14,11 +16,20 @@ export const useLogin = () => {
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async ({ json }) => {
       const response = await client.api.auth.login["$post"]({ json });
+
+      if (!response.ok) {
+        throw new Error("Giriş yapma başarısız");
+      }
+
       return await response.json();
     },
     onSuccess: () => {
+      toast.success("Giriş Yapıldı");
       router.refresh();
       queryClient.invalidateQueries({ queryKey: ["current"] });
+    },
+    onError: () => {
+      toast.error("Oturum açma başarısız");
     },
   });
   return mutation;
