@@ -60,8 +60,9 @@ export const CreateProjectForm = ({ onCancel }: CreateProjectFormProps) => {
         form: finalValues,
       },
       {
-        onSuccess: () => {
+        onSuccess: ({ data }) => {
           form.reset();
+          router.push(`/workspaces/${workspaceId}/projects/${data.$id}`);
         },
       }
     );
