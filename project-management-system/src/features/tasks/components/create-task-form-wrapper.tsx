@@ -17,7 +17,7 @@ export const CreateTaskFormWrapper = ({
   const { data: projects, isLoading: isLoadingProjects } = useGetProjects({
     workspaceId,
   });
-  const { data: members, isLoading: isLoadingMembers } = useGetProjects({
+  const { data: members, isLoading: isLoadingMembers } = useGetMembers({
     workspaceId,
   });
 
