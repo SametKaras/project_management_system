@@ -258,7 +258,7 @@ const app = new Hono()
   .get("/:taskId", sessionMiddleware, async (c) => {
     const currentUser = c.get("user");
     const databases = c.get("databases");
-    const users = await createAdminClient();
+    const { users } = await createAdminClient();
     const { taskId } = c.req.param();
 
     const task = await databases.getDocument<Task>(
