@@ -349,6 +349,10 @@ const app = new Hono()
 
       const workspaceId = workspaceIds.values().next().value;
 
+      if (!workspaceId) {
+        return c.json({ error: "Çalışma Alanı ID'si gerekli" }, 400);
+      }
+
       const member = await getMember({
         databases,
         workspaceId,
