@@ -26,7 +26,6 @@ import { ImageIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { createProjectSchema } from "../schemas";
-import { useCreateWorkspace } from "@/features/workspaces/api/use-create-workspace";
 import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 
 interface CreateProjectFormProps {

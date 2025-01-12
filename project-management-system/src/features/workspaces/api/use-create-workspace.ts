@@ -21,7 +21,7 @@ export const useCreateWorkspace = () => {
 
       return await response.json();
     },
-    onSuccess: ({ data }) => {
+    onSuccess: () => {
       toast.success("Çalışma alanı oluşturuldu");
       queryClient.invalidateQueries({ queryKey: ["workspaces"] });
     },
