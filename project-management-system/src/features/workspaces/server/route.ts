@@ -238,7 +238,7 @@ const app = new Hono()
     return c.json({ data: workspace });
   })
   .post(
-    "/workspaceId/join",
+    "/:workspaceId/join",
     sessionMiddleware,
     zValidator("json", z.object({ code: z.string() })),
     async (c) => {

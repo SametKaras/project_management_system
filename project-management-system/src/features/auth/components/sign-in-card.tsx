@@ -2,7 +2,6 @@
 
 import { z } from "zod";
 
-import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 

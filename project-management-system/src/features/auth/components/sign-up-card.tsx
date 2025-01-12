@@ -2,7 +2,6 @@
 
 import { z } from "zod";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -127,15 +126,6 @@ export const SignUpCard = () => {
       </div>
 
       <CardContent className="p-7 flex flex-col gap-y-4">
-        <Button
-          disabled={isPending}
-          variant="secondary"
-          size="lg"
-          className="w-full"
-        >
-          <FcGoogle className="mr-2 size-5" />
-          Google İle Giriş Yap
-        </Button>
         <Button
           disabled={isPending}
           variant="secondary"
